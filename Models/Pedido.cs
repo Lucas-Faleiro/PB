@@ -14,6 +14,10 @@ namespace PB.Models
         public decimal Frete { get; private set; }
         public List<ItemPedido> Itens { get; private set; } = new();
 
+        private Pedido()
+        {
+
+        }
         public Pedido(int consumidorId, int funcionarioId, PagamentoEnum pagamento, decimal frete)
         {
             ValidarDados(consumidorId, funcionarioId, frete);

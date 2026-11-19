@@ -5,15 +5,19 @@ namespace PB.Models
     public class Produto
     {
         public int Id { get; private set; }
-        public string Codigo { get; private set; }
-        public string Nome { get; private set; }
-        public string Descricao { get; private set; }
+        public string Codigo { get; private set; } = string.Empty;
+        public string Nome { get; private set; } = string.Empty;
+        public string Descricao { get; private set; } = string.Empty;
         public decimal Preco { get; private set; }
         public int Quantidade { get; private set; }
         public int CategoriaId { get; private set; }
         public Categoria? Categoria { get; private set; }
         public bool Ativo { get; private set; }
 
+        private Produto()
+        {
+
+        }
         public Produto(int categoriaId, string codigo, string nome, string desc, decimal preco, int qtd)
         {
             ArgumentException.ThrowIfNullOrWhiteSpace(codigo);

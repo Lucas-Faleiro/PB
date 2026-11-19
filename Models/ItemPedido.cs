@@ -9,6 +9,11 @@
         public int Quantidade { get; private set; }
         public decimal PrecoUnitario { get; private set; }
 
+        private ItemPedido()
+        {
+
+        }
+
         public ItemPedido(Produto produto, int qtd, decimal precoUnitario)
         {
             ArgumentNullException.ThrowIfNull(produto);
